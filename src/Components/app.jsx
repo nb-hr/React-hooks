@@ -3,20 +3,21 @@ import axios from 'axios';
 import ReactDOM from 'react-dom';
 
 const App = () => {
-  const [product, setProduct] = useState([])
+  const [movie, setMovie] = useState([])
+  const [title, setTitle] = useState('Dark-Knight')
 
   useEffect (() => {
-    axios.get(`https://www.omdbapi.com/?apikey=f30c9863&t=Captain America&plot=full`
+    axios.get(`https://www.omdbapi.com/?apikey=f30c9863&t=${title}&plot=full`
     )
     .then(res => res.data)
     .then(res => {
-        setProduct(res);
+        setMovie(res);
     });
   }, [])
 
   return (
     <div>
-      {console.log(product)}
+      {console.log(movie)}
       Welcome to Movie App!
     </div>
   )
