@@ -3,10 +3,19 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "watch": {
+    "build": {
+      "patterns": [
+        "src"
+      ],
+      "extensions": "js,jsx"
+    }
+  },
   "scripts": {
     "start": "nodemon server/index.js",
     "dev": "webpack --mode development && node server/index.js",
     "build": "webpack --mode production",
+    "watch": "npm-watch",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -21,7 +30,9 @@
   },
   "homepage": "https://github.com/nb-hr/React-hooks#readme",
   "dependencies": {
+    "axios": "^0.25.0",
     "express": "^4.17.2",
+    "npm-watch": "^0.11.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2"
   },
