@@ -5,7 +5,7 @@ import MovieList from './MovieList.jsx'
 
 const App = () => {
   const [movie, setMovie] = useState([])
-  const [title, setTitle] = useState('Dark-Knight')
+  const [title, setTitle] = useState('Titanic')
 
   useEffect (() => {
     axios.get(`https://www.omdbapi.com/?apikey=f30c9863&t=${title}&plot=full`)
@@ -13,11 +13,11 @@ const App = () => {
     .then(res => {
         setMovie(res);
     });
-  })
+  }, [])
 
   return (
     <div>
-      {/* {console.log(movie)} */}
+      {console.log(movie)}
       Welcome to Movie App!
       <MovieList singleMovie={movie}/>
     </div>
